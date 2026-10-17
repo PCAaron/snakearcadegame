@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Snake Arcade Game – Play Classic Arcade Snake Online Free</title>
+    <meta name="description"
+        content="Play the classic snake arcade game free in your browser — no download, works on mobile. Three speeds, keyboard or swipe controls, high score saved locally.">
+    <link rel="canonical" href="https://snakearcadegame.com/">
+
+    <!-- PWA：直访流量的来源 -->
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Snake Arcade">
+    <meta name="application-name" content="Snake Arcade Game">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" href="/icon-192.png">
+    <link rel="stylesheet" href="/common.css">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+</head>
+
+<body>
+    <div class="wrap">
+
+        <header>
+            <strong>Snake Arcade Game</strong>
+            <a href="/nokia-snake">Nokia Snake</a>
+        </header>
+
+        <h1>Snake Arcade Game</h1>
+        <p class="sub">Play the classic arcade snake free in your browser — no download, no signup.</p>
+
+        <div id="stage">
+            <canvas id="game" width="630" height="450" aria-label="Snake arcade game"></canvas>
+            <div id="overlay">
+                <h2 id="ovTitle">Game Over</h2>
+                <p id="ovText" class="hint" style="margin:0"></p>
+                <button class="primary" id="ovBtn">Play again</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="score">Score <span id="score">0</span> · Best <span id="best">0</span></div>
+            <div class="controls">
+                <button class="speed" data-sp="150" aria-pressed="false">Slug</button>
+                <button class="speed" data-sp="100" aria-pressed="true">Worm</button>
+                <button class="speed" data-sp="50" aria-pressed="false">Python</button>
+                <button class="ghost" id="pauseBtn">Pause</button>
+            </div>
+        </div>
+        <p class="hint">Arrow keys or W A S D · swipe on mobile</p>
+
+        <section>
+            <h2>How to Play the Snake Arcade Game</h2>
+            <ol>
+                <li><strong>Move</strong> — use the arrow keys or W A S D on desktop; swipe on mobile.</li>
+                <li><strong>Eat</strong> — every apple makes the snake longer and the score higher.</li>
+                <li><strong>Survive</strong> — hitting the wall or your own tail ends the round.</li>
+                <li><strong>Pick your speed</strong> — Slug (slow), Worm (normal) or Python (fast).</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Classic Snake Game</h2>
+            <p>Snake has been rebuilt a thousand times, and most of those rebuilds changed the rules. This version keeps
+                the original ones.</p>
+            <ul>
+                <li><strong>Walls end the round.</strong> There is no wrap-around and no exit at the edges. Touch the
+                    border and the run is over.</li>
+                <li><strong>The grid stays visible.</strong> One move equals one square, so you can always count your
+                    way out of trouble. That is what makes planning possible instead of just reacting.</li>
+                <li><strong>Every apple is worth one point.</strong> No power-ups, no multipliers, no combos. Your score
+                    is simply how many apples you ate before you made a mistake.</li>
+                <li><strong>Three speeds, picked before you start.</strong> Slug (150 ms per step), Worm (100 ms) and
+                    Python (50 ms). Slower speeds are for learning the board; faster ones are where the game gets
+                    interesting.</li>
+                <li><strong>Your best score stays on your device.</strong> It is saved locally in your browser, so it
+                    survives a refresh and never leaves your machine.</li>
+            </ul>
+            <p>That is the whole game &mdash; nothing to unlock, nothing to buy. The only thing that changes from run to
+                run is how long you last.</p>
+        </section>
+
+        <section>
+            <h2>Play Snake Online</h2>
+            <p>No download, no account, no app store. The game runs in the browser tab you already have open, and it
+                starts on your first keypress.</p>
+            <ul>
+                <li><strong>Nothing to install.</strong> The page loads, you press an arrow key or swipe once, and the
+                    round is running. There is no start screen to click through and no file to download.</li>
+                <li><strong>One address for every device.</strong> The same page works on a desktop, a laptop, a phone
+                    and a tablet &mdash; the board scales to the screen and the controls adapt to whatever you have.
+                </li>
+                <li><strong>Keyboard or touch.</strong> Arrow keys or W A S D on a computer; swipe in the direction you
+                    want to turn on a touchscreen. Space or P pauses.</li>
+                <li><strong>Add it to your home screen.</strong> Use "Add to Home Screen" ("Install app" in Chrome on
+                    Android, Share &rarr; Add to Home Screen on iPhone) and the game opens full screen like an app
+                    &mdash; and after the first visit it keeps working with no connection at all.</li>
+                <li><strong>Free, and no sign-up.</strong> No email address, no account, no email confirmation. Nothing
+                    to lose by trying.</li>
+                <li><strong>Put it down and pick it up.</strong> Switching tabs pauses the round automatically, so you
+                    never come back to a dead snake, and your best score is waiting where you left it.</li>
+            </ul>
+            <p>If you only have a minute, play a slow round on Slug first. It is the quickest way to remember how the
+                board behaves.</p>
+        </section>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+
+            <details open>
+                <summary>What is the old snake game called?</summary>
+                <p>The game is simply called <strong>Snake</strong>, and it was also widely known as
+                    <strong>Nibbles</strong> in its
+                    MS-DOS era. The genre traces back to the 1976 arcade title <em>Blockade</em>, released by Gremlin
+                    Industries,
+                    where the goal was to survive longer than the other player.</p>
+            </details>
+
+            <details>
+                <summary>Can you still play snake?</summary>
+                <p>Yes — and you do not need to install anything. The snake arcade game on this page runs directly in
+                    your
+                    browser on desktop and mobile. You can also find a version hidden inside Google search.</p>
+            </details>
+
+            <details>
+                <summary>What is that snake game called?</summary>
+                <p>Depending on where you first played it, you may know it as <strong>Snake</strong>, <strong>Nokia
+                        Snake</strong>,
+                    or <strong>Nibbles</strong>. They are all the same core idea: steer a growing line, eat the food,
+                    and avoid
+                    hitting the walls or your own tail.</p>
+            </details>
+
+            <details>
+                <summary>Was snake an arcade game?</summary>
+                <p>It belongs to the arcade tradition. The block-style snake mechanic began with the 1976 arcade game
+                    <em>Blockade</em>, and the format became a staple of arcade cabinets, early home computers and
+                    mobile phones
+                    before moving to the browser.</p>
+            </details>
+        </section>
+
+        <section>
+            <h2>More Snake Games</h2>
+            <div class="grid">
+                <a href="/nokia-snake">nokia snake game</a>
+                <a href="/snake-unblocked">snake game unblocked</a>
+            </div>
+        </section>
+
+        <footer>
+            <a href="/">Play Snake</a>
+            <a href="/nokia-snake">Nokia Snake</a>
+            <a href="/snake-unblocked">Snake Unblocked</a>
+            <a href="/about">About</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+            <a href="/contact">Contact</a>
+            <p>© <span id="yr"></span> Snake Arcade Game</p>
+        </footer>
+    </div>
+
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "VideoGame",
+            "name": "Snake Arcade Game",
+            "url": "https://snakearcadegame.com/",
+            "description": "Play the classic snake arcade game free in your browser. Three speeds, keyboard or swipe controls, high score saved locally.",
+            "genre": "Arcade",
+            "gamePlatform": ["Web browser", "Mobile web"],
+            "applicationCategory": "Game",
+            "operatingSystem": "Any",
+            "playMode": "SinglePlayer",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            }
+        }
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+                    "@type": "Question",
+                    "name": "What is the old snake game called?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The game is simply called Snake, and it was also widely known as Nibbles in its MS-DOS era. The genre traces back to the 1976 arcade title Blockade, released by Gremlin Industries, where the goal was to survive longer than the other player."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can you still play snake?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes — and you do not need to install anything. The snake arcade game on this page runs directly in your browser on desktop and mobile. You can also find a version hidden inside Google search."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What is that snake game called?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Depending on where you first played it, you may know it as Snake, Nokia Snake, or Nibbles. They are all the same core idea: steer a growing line, eat the food, and avoid hitting the walls or your own tail."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Was snake an arcade game?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "It belongs to the arcade tradition. The block-style snake mechanic began with the 1976 arcade game Blockade, and the format became a staple of arcade cabinets, early home computers and mobile phones before moving to the browser."
+                    }
+                }
+            ]
+        }
+    </script>
+
+    <script src="/snake.js" defer></script>
+    <script>
+        if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
+    </script>
+</body>
+
+</html>

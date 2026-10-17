@@ -1,0 +1,334 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    background: #0d1117;
+    color: #e6edf3;
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.wrap {
+    width: 100%;
+    max-width: 720px
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0
+}
+
+header a {
+    color: #8b949e;
+    text-decoration: none;
+    font-size: 14px
+}
+
+h1 {
+    font-size: 28px;
+    line-height: 1.25;
+    margin: 8px 0 6px;
+    text-align: center
+}
+
+.sub {
+    text-align: center;
+    color: #8b949e;
+    font-size: 15px;
+    margin-bottom: 16px
+}
+
+#stage {
+    position: relative;
+    width: 100%;
+    max-width: 672px;
+    margin: 0 auto;
+    aspect-ratio: 7/5
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #161b22;
+    border-radius: 10px;
+    touch-action: none
+}
+
+#overlay {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(13, 17, 23, .86);
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px
+}
+
+#overlay.show {
+    display: flex
+}
+
+#overlay h2 {
+    font-size: 22px
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 20px
+}
+
+.primary {
+    background: #238636;
+    color: #fff
+}
+
+.ghost {
+    background: #21262d;
+    color: #e6edf3
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 12px 0;
+    font-variant-numeric: tabular-nums
+}
+
+.score {
+    font-size: 20px;
+    font-weight: 600
+}
+
+.score span {
+    color: #8b949e;
+    font-weight: 400;
+    font-size: 14px
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+    align-items: center
+}
+
+.speed {
+    background: #21262d;
+    color: #8b949e;
+    padding: 7px 14px;
+    font-size: 14px;
+    border-radius: 8px
+}
+
+.speed[aria-pressed="true"] {
+    background: #30363d;
+    color: #e6edf3
+}
+
+.hint {
+    color: #8b949e;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 22px
+}
+
+section {
+    margin: 26px 0
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #21262d;
+    padding-bottom: 8px
+}
+
+ol,
+ul {
+    padding-left: 22px
+}
+
+li {
+    margin: 6px 0
+}
+
+details {
+    background: #161b22;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin: 8px 0
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 600
+}
+
+details p {
+    margin-top: 8px;
+    color: #c9d1d9;
+    font-size: 15px
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px
+}
+
+.grid a {
+    display: block;
+    background: #161b22;
+    color: #58a6ff;
+    text-decoration: none;
+    padding: 11px 14px;
+    border-radius: 8px;
+    font-size: 15px
+}
+
+footer {
+    color: #8b949e;
+    font-size: 13px;
+    text-align: center;
+    padding: 26px 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px 14px
+}
+
+footer a {
+    color: #8b949e;
+    text-decoration: none
+}
+
+footer a:hover {
+    color: #3fb950
+}
+
+footer p {
+    width: 100%;
+    margin: 10px 0 0
+}
+
+@media(max-width:480px) {
+    h1 {
+        font-size: 22px
+    }
+
+    .score {
+        font-size: 17px
+    }
+}
+
+/* Nokia skin — /nokia-snake only */
+body.skin-nokia {
+    background: #0d1117;
+}
+
+body.skin-nokia .phone {
+    max-width: 380px;
+    margin: 0 auto 20px;
+    background: #1b1f1a;
+    border-radius: 30px;
+    padding: 20px 16px 34px;
+    box-shadow:
+        0 0 0 3px #2c3128,
+        0 18px 44px rgba(0, 0, 0, 0.65);
+}
+
+body.skin-nokia .screen {
+    position: relative;
+    background: #c7f0d8;
+    border: 8px solid #0f120e;
+    border-radius: 10px;
+    padding: 10px 10px 6px;
+    overflow: hidden;
+}
+
+body.skin-nokia .screen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(67, 82, 61, 0.1) 0 1px,
+        transparent 1px 3px
+    );
+}
+
+body.skin-nokia .screen #stage {
+    max-width: none;
+}
+
+body.skin-nokia .screen canvas {
+    border-radius: 4px;
+    background: #c7f0d8;
+}
+
+body.skin-nokia .screen #overlay {
+    border-radius: 4px;
+}
+
+body.skin-nokia .screen .score,
+body.skin-nokia .screen .hint {
+    color: #2f3b28;
+}
+
+body.skin-nokia .screen .speed {
+    background: rgba(67, 82, 61, 0.14);
+    color: #2f3b28;
+}
+
+body.skin-nokia .screen .speed[aria-pressed="true"] {
+    background: #43523d;
+    color: #c7f0d8;
+}
+
+body.skin-nokia .screen button.primary {
+    background: #43523d;
+    color: #c7f0d8;
+}
+
+body.skin-nokia .screen button.ghost {
+    background: rgba(67, 82, 61, 0.2);
+    color: #2f3b28;
+}
+
+body.skin-nokia h1 {
+    font-family: ui-monospace, "Courier New", monospace;
+    letter-spacing: 0.06em;
+}
+
+.inner-links {
+    margin-top: 16px;
+    font-size: 15px;
+}
+
+.inner-links a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+.inner-links a:hover {
+    text-decoration: underline;
+}

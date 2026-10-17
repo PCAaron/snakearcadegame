@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>About Snake Arcade Game – A Free Browser Arcade, No Downloads</title>
+    <meta name="description"
+        content="Who builds Snake Arcade Game, why the site exists, how the games are made, what it deliberately does not do, and how it is funded.">
+    <link rel="canonical" href="https://snakearcadegame.com/about">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#0d1117">
+    <link rel="icon" href="/icon-192.png" sizes="192x192">
+    <link rel="stylesheet" href="/legal.css">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "url": "https://snakearcadegame.com/about",
+            "name": "About Snake Arcade Game",
+            "mainEntity": {
+                "@type": "Organization",
+                "name": "Snake Arcade Game",
+                "url": "https://snakearcadegame.com/",
+                "logo": "https://snakearcadegame.com/icon-512.png",
+                "email": "hello@snakearcadegame.com",
+                "description": "An independently run, free browser game site offering browser versions of the classic snake arcade game."
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <header>
+            <a class="brand" href="/">Snake Arcade Game</a>
+            <nav>
+                <a href="/">Play</a>
+                <a href="/nokia-snake">Nokia Snake</a>
+                <a href="/snake-unblocked">Unblocked</a>
+            </nav>
+        </header>
+
+        <main>
+            <h1>About Snake Arcade Game</h1>
+            <p class="meta">Last updated: 17 October 2026</p>
+
+            <p>Snake Arcade Game is a small, independently run site for playing the classic snake arcade game in a
+                browser. No account, no download, no queue in front of the game — open a page and play.</p>
+
+            <h2>Why This Site Exists</h2>
+            <p>The snake game is one of the oldest and simplest ideas in arcade gaming, and it is also one of the
+                easiest to ruin. Plenty of pages that host it open with an app-install prompt, hide the board under
+                three ad layers, or require an account before the first round. Others load a heavy framework to draw a
+                21×15 grid of squares.</p>
+            <p>This site was built as the opposite of that. One game per page, in the browser, starting on your first
+                keypress. If something here gets in the way of playing, that is a bug and it should be reported rather
+                than tolerated.</p>
+
+            <h2>How the Games Are Built</h2>
+            <ul>
+                <li><strong>Plain HTML, CSS and JavaScript.</strong> No framework, no build step, no third-party
+                    runtime. The board is drawn on a canvas; the whole game is a small amount of hand-written code.</li>
+                <li><strong>No login, no server round-trip to play.</strong> The page loads once and the game runs
+                    locally from there.</li>
+                <li><strong>Keyboard, touch and speed settings.</strong> Arrow keys or W A S D on a computer, swipes on
+                    a touchscreen, and three speeds you pick before the round starts.</li>
+                <li><strong>Your score stays with you.</strong> The high score is written to your browser's local
+                    storage. It is not sent anywhere, and there is no server copy to recover if you clear it.</li>
+                <li><strong>It keeps working offline.</strong> After your first visit the game is cached, so adding it
+                    to your home screen gives you something that still opens when the connection — or the network filter
+                    — does not cooperate.</li>
+            </ul>
+
+            <h2>What Is on the Site</h2>
+            <p>Three pages, each doing one job:</p>
+            <table>
+                <tr>
+                    <th>Page</th>
+                    <th>What it covers</th>
+                </tr>
+                <tr>
+                    <td><a href="/">Snake Arcade Game</a></td>
+                    <td>The game itself, plus how to play it, what the classic rules are, and what playing online
+                        involves.</td>
+                </tr>
+                <tr>
+                    <td><a href="/nokia-snake">Nokia Snake</a></td>
+                    <td>The same game rendered in monochrome pixel style, together with the history of the version that
+                        shipped on Nokia handsets.</td>
+                </tr>
+                <tr>
+                    <td><a href="/snake-unblocked">Snake Unblocked</a></td>
+                    <td>Why game pages get blocked on school and work networks, and how to play without installing
+                        anything.</td>
+                </tr>
+            </table>
+            <p>Also on the site: this page, the <a href="/privacy">Privacy Policy</a>, the <a href="/terms">Terms of
+                    Service</a>, and a <a href="/contact">Contact page</a>.</p>
+
+            <h2>What This Site Deliberately Does Not Do</h2>
+            <ul>
+                <li>No accounts, no sign-up walls, no email address requested.</li>
+                <li>No download buttons that do not download anything, and no fake "play" buttons that open an ad.</li>
+                <li>No pop-ups, no interstitials over the board, no auto-playing sound.</li>
+                <li>No leaderboards or friend requests, because there is no account to attach them to.</li>
+                <li>No gambling, no real-money stakes, no loot boxes or in-app purchases.</li>
+            </ul>
+
+            <h2>How the Site Is Funded</h2>
+            <p>The games are free and there is nothing to buy. Hosting is paid for by advertising served by third-party
+                networks, which is why you will see ads around the game rather than across it. Ad placement is
+                deliberately kept clear of the board and of the controls, and the first thing on every game page is the
+                game.</p>
+            <p>Details of the cookies those networks use, and how to opt out of personalised advertising, are in the <a
+                    href="/privacy">Privacy Policy</a>.</p>
+
+            <h2>Who Runs It and How to Reach Us</h2>
+            <p>The site is built and maintained by one person in their spare time, which is also why replies are not
+                instant and why features arrive one at a time rather than in quarterly releases. Bug reports, broken
+                links and suggestions are all welcome — the <a href="/contact">Contact page</a> has the address and
+                explains what to include.</p>
+        </main>
+
+        <footer>
+            <a href="/">Play Snake</a>
+            <a href="/nokia-snake">Nokia Snake</a>
+            <a href="/snake-unblocked">Snake Unblocked</a>
+            <a href="/about">About</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+            <a href="/contact">Contact</a>
+            <p>© <span id="yr"></span> Snake Arcade Game</p>
+        </footer>
+
+    </div>
+    <script>var y = document.getElementById("yr"); if (y) y.textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

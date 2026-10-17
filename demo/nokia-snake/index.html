@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Nokia Snake Game – Play the Classic 3310 Snake Online</title>
+    <meta name="description"
+        content="Play the Nokia snake game in your browser — the monochrome classic, rebuilt in pixel style. No download, works on mobile, high score saved locally.">
+    <link rel="canonical" href="https://snakearcadegame.com/nokia-snake">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Nokia Snake">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" href="/icon-192.png">
+    <link rel="stylesheet" href="/common.css">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "VideoGame",
+            "name": "Nokia Snake Game",
+            "url": "https://snakearcadegame.com/nokia-snake",
+            "description": "A monochrome, pixel-style version of the snake game that shipped preinstalled on Nokia phones, playable free in any browser.",
+            "genre": ["Arcade", "Classic", "Retro"],
+            "gamePlatform": "Web Browser",
+            "applicationCategory": "Game",
+            "operatingSystem": "Any",
+            "image": "https://snakearcadegame.com/icon-512.png",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        }
+    </script>
+</head>
+
+<body class="skin-nokia">
+    <div class="wrap">
+        <header>
+            <a href="/">Snake Arcade Game</a>
+            <a href="/snake-unblocked">Unblocked</a>
+        </header>
+
+        <h1>Nokia Snake Game</h1>
+        <p class="sub">The Nokia snake game you grew up with, playable in your browser for free.</p>
+
+        <div class="phone">
+            <div class="screen">
+                <div id="stage">
+                    <canvas id="game" width="630" height="450" aria-label="Nokia snake game"></canvas>
+                    <div id="overlay">
+                        <h2 id="ovTitle">Game Over</h2>
+                        <p id="ovText" class="hint" style="margin:0"></p>
+                        <button class="primary" id="ovBtn" type="button">Play again</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="score">Score <span id="score">0</span> · Best <span id="best">0</span></div>
+                    <div class="controls">
+                        <button class="speed" type="button" data-sp="150" aria-pressed="false">Slug</button>
+                        <button class="speed" type="button" data-sp="100" aria-pressed="true">Worm</button>
+                        <button class="speed" type="button" data-sp="50" aria-pressed="false">Python</button>
+                        <button class="ghost" type="button" id="pauseBtn">Pause</button>
+                    </div>
+                </div>
+                <p class="hint" style="margin-bottom:0">Arrow keys or W A S D · swipe on mobile</p>
+            </div>
+        </div>
+
+        <section>
+            <h2>What Was the First Nokia Phone With Snake?</h2>
+            <p>The Nokia 6110, in 1997. The game was designed and programmed by <strong>Taneli Armanto</strong>, a
+                Finnish engineer at Nokia, and it shipped <em>preinstalled</em> on the handset — one of three games that
+                came with the phone. It did not arrive as a download or a purchase. It was simply there the first time
+                you turned the phone on.</p>
+            <p>Nokia later shipped follow-up versions on other handsets, which is why the game is remembered as "the
+                Nokia snake" rather than as one phone's feature.</p>
+        </section>
+
+        <section>
+            <h2>Why the Nokia Version Still Feels Different</h2>
+            <ul>
+                <li><strong>One colour, no shading.</strong> A monochrome LCD had two states per pixel. Everything you
+                    saw was drawn out of dark blocks on a green-grey screen, so the game had to be readable with no
+                    colour and no contrast tricks.</li>
+                <li><strong>Square segments.</strong> On the LCD the snake was a run of solid blocks joined into one
+                    line. There were no rounded corners and no gradients because the screen could not show them.</li>
+                <li><strong>The keypad.</strong> You steered with the phone's number keys — no swipe, no analogue stick.
+                    That is why the game felt like a series of quick decisions rather than one continuous motion.</li>
+                <li><strong>Made for queues and bus stops.</strong> The handset version was built to be picked up for
+                    thirty seconds and put down again. That is still the best way to play it.</li>
+            </ul>
+            <p>This page renders the game the way that screen would have: a green-grey board, dark blocky segments, and
+                a square piece of food. Same rules underneath.</p>
+        </section>
+
+        <section>
+            <h2>Which Nokia Had the Snake Game?</h2>
+            <p>More than one. The 6110 is where it started in 1997, and later handsets — including the 3310, the phone
+                most people picture when they think of this game — shipped with their own version of it. Nokia's Snake
+                was preinstalled across a long list of models over the following years, which is how it ended up in a
+                very large number of pockets.</p>
+        </section>
+
+        <section>
+            <h2>How to Play the Nokia Snake Game</h2>
+            <ol>
+                <li><strong>Start</strong> — press an arrow key, or swipe once on a touchscreen. The snake starts moving
+                    immediately, exactly as it did on the handset.</li>
+                <li><strong>Turn</strong> — arrow keys or W A S D on a keyboard, swipes on a phone. It is a
+                    four-direction game: no diagonals, no reversing into yourself.</li>
+                <li><strong>Eat</strong> — each piece of food makes the snake one block longer and adds one point. That
+                    is the only way the snake grows.</li>
+                <li><strong>Stop before the wall or your own tail</strong> — either one ends the round instantly. The
+                    board has no wrap-around.</li>
+            </ol>
+            <p>Pick the slowest speed for your first round. The handset version was slow by modern standards, and that
+                is what made long runs possible.</p>
+        </section>
+
+        <p class="inner-links">
+            <a href="/">snake arcade game</a> ·
+            <a href="/snake-unblocked">snake game unblocked</a>
+        </p>
+
+        <footer>
+            <a href="/">Play Snake</a>
+            <a href="/nokia-snake">Nokia Snake</a>
+            <a href="/snake-unblocked">Snake Unblocked</a>
+            <a href="/about">About</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+            <a href="/contact">Contact</a>
+            <p>© <span id="yr"></span> Snake Arcade Game</p>
+        </footer>
+    </div>
+
+    <script src="/snake.js" defer></script>
+    <script>
+        if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
+    </script>
+</body>
+
+</html>

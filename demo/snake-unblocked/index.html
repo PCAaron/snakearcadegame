@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Snake Game Unblocked – Play in Your Browser, No Download</title>
+    <meta name="description"
+        content="Snake game unblocked and free — no download, no install, no account. Play in any browser, including on school or work networks that block game sites. Works offline once loaded.">
+    <link rel="canonical" href="https://snakearcadegame.com/snake-unblocked">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Snake Arcade">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" href="/icon-192.png">
+    <link rel="stylesheet" href="/common.css">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "VideoGame",
+            "name": "Snake Game Unblocked",
+            "url": "https://snakearcadegame.com/snake-unblocked",
+            "description": "An unblocked browser version of the classic snake game. No download, no install, and it keeps working offline after the first load.",
+            "genre": ["Arcade", "Casual"],
+            "gamePlatform": "Web Browser",
+            "applicationCategory": "Game",
+            "operatingSystem": "Any",
+            "image": "https://snakearcadegame.com/icon-512.png",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <a href="/">Snake Arcade Game</a>
+            <a href="/nokia-snake">Nokia Snake</a>
+        </header>
+
+        <h1>Snake Game Unblocked</h1>
+        <p class="sub">Snake unblocked and free to play in your browser — no install, no login.</p>
+
+        <div id="stage">
+            <canvas id="game" width="630" height="450" aria-label="Snake game unblocked"></canvas>
+            <div id="overlay">
+                <h2 id="ovTitle">Game Over</h2>
+                <p id="ovText" class="hint" style="margin:0"></p>
+                <button class="primary" id="ovBtn" type="button">Play again</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="score">Score <span id="score">0</span> · Best <span id="best">0</span></div>
+            <div class="controls">
+                <button class="speed" type="button" data-sp="150" aria-pressed="false">Slug</button>
+                <button class="speed" type="button" data-sp="100" aria-pressed="true">Worm</button>
+                <button class="speed" type="button" data-sp="50" aria-pressed="false">Python</button>
+                <button class="ghost" type="button" id="pauseBtn">Pause</button>
+            </div>
+        </div>
+        <p class="hint">Arrow keys or W A S D · swipe on mobile</p>
+
+        <section>
+            <h2>Why Do Schools and Workplaces Block Game Sites?</h2>
+            <p>Usually not because of the game itself. Network filters sort the web into categories — gaming, social
+                media, streaming, adult content — and then block whole categories at once. A page gets sorted into
+                "gaming" and is blocked whether it contains one snake game or a thousand.</p>
+            <p>Three things push a domain into the gaming category:</p>
+            <ul>
+                <li><strong>Domain reputation.</strong> Filters keep their own lists of known game portals. Being on a
+                    list is enough — no one reviews the page by hand.</li>
+                <li><strong>Category and keyword signals.</strong> "Games", "play", "arcade" in the URL, the title and
+                    the page text are strong hints to an automated classifier.</li>
+                <li><strong>Site history.</strong> A domain that has hosted games before is assumed to host games now.
+                    This is also why a brand-new game site sometimes slips through for a while.</li>
+            </ul>
+            <p>So the block is aimed at the category, not at you. That also means there is nothing to "hack" — and
+                nothing on this page tries to.</p>
+        </section>
+
+        <section>
+            <h2>How to Play Without Installing Anything</h2>
+            <p>This page is a single HTML file with the game built in. Press a key and the round starts; there is no
+                installer, no file to download, and no account to create.</p>
+            <ol>
+                <li><strong>Press an arrow key, or swipe once.</strong> The round begins immediately — there is no start
+                    screen, no loading bar, and no ad before the game.</li>
+                <li><strong>Steer with arrow keys or W A S D</strong> on a keyboard, or swipe in the direction you want
+                    to turn on a touchscreen. Space or P pauses.</li>
+                <li><strong>Eat to grow</strong> — each piece of food adds one segment and one point.</li>
+                <li><strong>Add it to your home screen.</strong> Use "Install app" on Android or Share → "Add to Home
+                    Screen" on iPhone. After that first visit the game is cached and <strong>keeps working with no
+                        connection at all</strong> — which is the part that matters if a network filter decides to block
+                    the page later.</li>
+            </ol>
+            <p>If the page you are reading this on still loads, the game inside it works. There is no separate download
+                step that a filter can interrupt.</p>
+        </section>
+
+        <section>
+            <h2>Does an Unblocked Version Differ From the Normal One?</h2>
+            <p>No. It is the same game, same rules, same three speeds, same local high score — the difference is only in
+                how you got here. "Unblocked" describes the network you are on, not the game. Nothing is modified, and
+                nothing is bypassed to make it load.</p>
+        </section>
+
+        <p class="inner-links">
+            <a href="/">classic snake game</a> ·
+            <a href="/nokia-snake">nokia snake game</a>
+        </p>
+
+        <footer>
+            <a href="/">Play Snake</a>
+            <a href="/nokia-snake">Nokia Snake</a>
+            <a href="/snake-unblocked">Snake Unblocked</a>
+            <a href="/about">About</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+            <a href="/contact">Contact</a>
+            <p>© <span id="yr"></span> Snake Arcade Game</p>
+        </footer>
+    </div>
+
+    <script src="/snake.js" defer></script>
+    <script>
+        if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
+    </script>
+</body>
+
+</html>
