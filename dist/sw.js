@@ -1,8 +1,8 @@
-const CACHE = "snake-arcade-v3";
+const CACHE = "snake-arcade-v5";
 const ASSETS = [
   "/",
-  "/nokia-snake/",
-  "/snake-unblocked/",
+  "/nokia-snake-game",
+  "/snake-game-unblocked",
   "/snake.js",
   "/common.css",
   "/manifest.webmanifest",
