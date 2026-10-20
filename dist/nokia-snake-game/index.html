@@ -9,7 +9,7 @@
         content="Play the Nokia snake game in your browser — the monochrome classic, rebuilt in pixel style. No download, works on mobile, high score saved locally.">
     <link rel="canonical" href="https://snakearcadegame.com/nokia-snake-game">
     <link rel="manifest" href="/manifest.webmanifest">
-    <meta name="theme-color" content="#0d1117">
+    <meta name="theme-color" content="#050608">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Nokia Snake">
@@ -34,17 +34,22 @@
     </script>
 </head>
 
-<body class="skin-nokia">
+<body class="skin-nokia page-nokia page-game">
     <div class="wrap">
-        <header>
-            <a href="/">Snake Arcade Game</a>
-            <a href="/snake-game-unblocked">Unblocked</a>
+        <header class="site-header">
+            <a class="brand" href="/">Snake Arcade Game</a>
+            <nav aria-label="Site">
+                <a href="/nokia-snake-game" aria-current="page">Nokia Snake</a>
+                <a href="/snake-game-unblocked">Unblocked</a>
+            </nav>
         </header>
 
-        <h1>Nokia Snake Game</h1>
-        <p class="sub">The Nokia snake game you grew up with, playable in your browser for free.</p>
+        <div class="hero">
+            <h1>Nokia Snake Game</h1>
+            <p class="sub">The Nokia snake game you grew up with, playable in your browser for free.</p>
+        </div>
 
-        <div class="phone">
+        <div class="phone" data-ui>
             <div class="screen">
                 <div id="stage">
                     <canvas id="game" width="630" height="450" aria-label="Nokia snake game"></canvas>
@@ -65,9 +70,22 @@
                 </div>
                 <p class="hint" style="margin-bottom:0">Arrow keys or W A S D · swipe on mobile</p>
             </div>
+            <div class="phone-controls" aria-hidden="true">
+                <div class="dpad">
+                    <span class="up"></span>
+                    <span class="down"></span>
+                    <span class="left"></span>
+                    <span class="right"></span>
+                    <span class="center"></span>
+                </div>
+                <div class="phone-keys">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
 
-        <section>
+        <section class="page-section prose-block">
             <h2>What Was the First Nokia Phone With Snake?</h2>
             <p>The Nokia 6110, in 1997. The game was designed and programmed by <strong>Taneli Armanto</strong>, a
                 Finnish engineer at Nokia, and it shipped <em>preinstalled</em> on the handset — one of three games that
@@ -77,7 +95,7 @@
                 Nokia snake" rather than as one phone's feature.</p>
         </section>
 
-        <section>
+        <section class="page-section prose-block">
             <h2>Why the Nokia Version Still Feels Different</h2>
             <ul>
                 <li><strong>One colour, no shading.</strong> A monochrome LCD had two states per pixel. Everything you
@@ -94,7 +112,7 @@
                 a square piece of food. Same rules underneath.</p>
         </section>
 
-        <section>
+        <section class="page-section prose-block">
             <h2>Which Nokia Had the Snake Game?</h2>
             <p>More than one. The 6110 is where it started in 1997, and later handsets — including the 3310, the phone
                 most people picture when they think of this game — shipped with their own version of it. Nokia's Snake
@@ -102,9 +120,9 @@
                 very large number of pockets.</p>
         </section>
 
-        <section>
+        <section class="page-section">
             <h2>How to Play the Nokia Snake Game</h2>
-            <ol>
+            <ol class="play-steps">
                 <li><strong>Start</strong> — press an arrow key, or swipe once on a touchscreen. The snake starts moving
                     immediately, exactly as it did on the handset.</li>
                 <li><strong>Turn</strong> — arrow keys or W A S D on a keyboard, swipes on a phone. It is a
@@ -118,19 +136,19 @@
                 is what made long runs possible.</p>
         </section>
 
-        <p class="inner-links">
-            <a href="/">snake arcade game</a> ·
-            <a href="/snake-game-unblocked">snake game unblocked</a>
-        </p>
+        <section class="page-section">
+            <h2>More Snake Games</h2>
+            <div class="more-games">
+                <a href="/nokia-snake-game">nokia snake game</a>
+                <a href="/snake-game-unblocked">snake game unblocked</a>
+            </div>
+        </section>
 
-        <footer>
-            <a href="/">Play Snake</a>
-            <a href="/nokia-snake-game">Nokia Snake</a>
-            <a href="/snake-game-unblocked">Snake Unblocked</a>
-            <a href="/about">About</a>
-            <a href="/privacy">Privacy</a>
-            <a href="/terms">Terms</a>
-            <a href="/contact">Contact</a>
+        <footer class="site-footer">
+            <div class="footer-links">
+                <a href="/privacy">Privacy</a>
+                <a href="/contact">Contact</a>
+            </div>
             <p>© <span id="yr"></span> Snake Arcade Game</p>
         </footer>
     </div>

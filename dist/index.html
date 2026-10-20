@@ -11,7 +11,7 @@
 
     <!-- PWA：直访流量的来源 -->
     <link rel="manifest" href="/manifest.webmanifest">
-    <meta name="theme-color" content="#0d1117">
+    <meta name="theme-color" content="#050608">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -23,40 +23,54 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
 </head>
 
-<body>
+<body class="page-home page-game">
     <div class="wrap">
 
-        <header>
-            <strong>Snake Arcade Game</strong>
-            <a href="/nokia-snake-game">Nokia Snake</a>
+        <header class="site-header">
+            <a class="brand" href="/">Snake Arcade Game</a>
+            <nav aria-label="Site">
+                <a href="/nokia-snake-game">Nokia Snake</a>
+                <a href="/snake-game-unblocked">Unblocked</a>
+            </nav>
         </header>
 
-        <h1>Snake Arcade Game</h1>
-        <p class="sub">Play the classic arcade snake free in your browser — no download, no signup.</p>
-
-        <div id="stage">
-            <canvas id="game" width="630" height="450" aria-label="Snake arcade game"></canvas>
-            <div id="overlay">
-                <h2 id="ovTitle">Game Over</h2>
-                <p id="ovText" class="hint" style="margin:0"></p>
-                <button class="primary" id="ovBtn">Play again</button>
-            </div>
+        <div class="hero">
+            <h1>Snake Arcade Game</h1>
+            <p class="sub">Play the classic arcade snake free in your browser — no download, no signup.</p>
         </div>
 
-        <div class="row">
-            <div class="score">Score <span id="score">0</span> · Best <span id="best">0</span></div>
-            <div class="controls">
-                <button class="speed" data-sp="150" aria-pressed="false">Slug</button>
-                <button class="speed" data-sp="100" aria-pressed="true">Worm</button>
-                <button class="speed" data-sp="50" aria-pressed="false">Python</button>
-                <button class="ghost" id="pauseBtn">Pause</button>
+        <div class="arcade-cabinet" data-ui>
+            <div class="arcade-cabinet__shell">
+                <div class="arcade-cabinet__top-slot" aria-hidden="true"></div>
+                <div class="arcade-cabinet__bezel">
+                    <div id="stage">
+                        <canvas id="game" width="630" height="450" aria-label="Snake arcade game"></canvas>
+                        <div id="overlay">
+                            <h2 id="ovTitle">Game Over</h2>
+                            <p id="ovText" class="hint" style="margin:0"></p>
+                            <button class="primary" id="ovBtn" type="button">Play again</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="arcade-cabinet__panel">
+                    <div class="row">
+                        <div class="score">Score <span id="score">0</span> · Best <span id="best">0</span></div>
+                        <div class="controls">
+                            <button class="speed" type="button" data-sp="150" aria-pressed="false">Slug</button>
+                            <button class="speed" type="button" data-sp="100" aria-pressed="true">Worm</button>
+                            <button class="speed" type="button" data-sp="50" aria-pressed="false">Python</button>
+                            <button class="ghost" type="button" id="pauseBtn">Pause</button>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="arcade-cabinet__base" aria-hidden="true"></div>
         </div>
         <p class="hint">Arrow keys or W A S D · swipe on mobile</p>
 
-        <section>
+        <section class="page-section">
             <h2>How to Play the Snake Arcade Game</h2>
-            <ol>
+            <ol class="play-steps">
                 <li><strong>Move</strong> — use the arrow keys or W A S D on desktop; swipe on mobile.</li>
                 <li><strong>Eat</strong> — every apple makes the snake longer and the score higher.</li>
                 <li><strong>Survive</strong> — hitting the wall or your own tail ends the round.</li>
@@ -64,7 +78,7 @@
             </ol>
         </section>
 
-        <section>
+        <section class="page-section prose-block">
             <h2>Classic Snake Game</h2>
             <p>Snake has been rebuilt a thousand times, and most of those rebuilds changed the rules. This version keeps
                 the original ones.</p>
@@ -85,11 +99,11 @@
                 run is how long you last.</p>
         </section>
 
-        <section>
+        <section class="page-section">
             <h2>Play Snake Online</h2>
             <p>No download, no account, no app store. The game runs in the browser tab you already have open, and it
                 starts on your first keypress.</p>
-            <ul>
+            <ul class="online-points">
                 <li><strong>Nothing to install.</strong> The page loads, you press an arrow key or swipe once, and the
                     round is running. There is no start screen to click through and no file to download.</li>
                 <li><strong>One address for every device.</strong> The same page works on a desktop, a laptop, a phone
@@ -105,11 +119,11 @@
                 <li><strong>Put it down and pick it up.</strong> Switching tabs pauses the round automatically, so you
                     never come back to a dead snake, and your best score is waiting where you left it.</li>
             </ul>
-            <p>If you only have a minute, play a slow round on Slug first. It is the quickest way to remember how the
+            <p class="callout">If you only have a minute, play a slow round on Slug first. It is the quickest way to remember how the
                 board behaves.</p>
         </section>
 
-        <section>
+        <section class="page-section faq-list">
             <h2>Frequently Asked Questions</h2>
 
             <details open>
@@ -146,22 +160,19 @@
             </details>
         </section>
 
-        <section>
+        <section class="page-section">
             <h2>More Snake Games</h2>
-            <div class="grid">
+            <div class="more-games">
                 <a href="/nokia-snake-game">nokia snake game</a>
                 <a href="/snake-game-unblocked">snake game unblocked</a>
             </div>
         </section>
 
-        <footer>
-            <a href="/">Play Snake</a>
-            <a href="/nokia-snake-game">Nokia Snake</a>
-            <a href="/snake-game-unblocked">Snake Unblocked</a>
-            <a href="/about">About</a>
-            <a href="/privacy">Privacy</a>
-            <a href="/terms">Terms</a>
-            <a href="/contact">Contact</a>
+        <footer class="site-footer">
+            <div class="footer-links">
+                <a href="/privacy">Privacy</a>
+                <a href="/contact">Contact</a>
+            </div>
             <p>© <span id="yr"></span> Snake Arcade Game</p>
         </footer>
     </div>

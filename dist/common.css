@@ -1,66 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+:root {
+    --ground: #050608;
+    --surface: #0f1419;
+    --surface-raised: #161d26;
+    --ink: #e8eef4;
+    --ink-muted: #9aa8b5;
+    --accent: #3ddc6e;
+    --accent-dim: #2a9d4f;
+    --link: #5eb8ff;
+    --danger: #f85149;
+    --pause: #c77dff;
+    --font-display: "Press Start 2P", system-ui, sans-serif;
+    --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --page-max: 1040px;
+    --page-pad: clamp(16px, 4vw, 28px);
+    --section-gap: clamp(72px, 10vw, 140px);
+    --radius-lg: 16px;
+    --radius-md: 10px;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background: #0d1117;
-    color: #e6edf3;
-    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    padding: 0 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center
+    background: var(--ground);
+    color: var(--ink);
+    font: 17px/1.55 var(--font-body);
+    padding: 0 var(--page-pad) 48px;
 }
 
 .wrap {
     width: 100%;
-    max-width: 720px
+    max-width: var(--page-max);
+    margin: 0 auto;
 }
 
-header {
+/* Game pages: home, Nokia, Unblocked — same chrome width & styles */
+body.page-game .wrap > header.site-header,
+body.page-game .wrap > footer.site-footer {
+    width: 100%;
+}
+
+body.page-game header.site-header .brand {
+    font-family: var(--font-display);
+    font-size: clamp(9px, 2.4vw, 11px);
+    line-height: 1.5;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    max-width: 55%;
+}
+
+body.skin-nokia header.site-header,
+body.skin-nokia footer.site-footer,
+body.page-unblocked header.site-header,
+body.page-unblocked footer.site-footer {
+    font-family: var(--font-body);
+}
+
+/* —— Header —— */
+header.site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 14px 0
+    gap: 16px;
+    padding: 20px 0 8px;
+    flex-wrap: wrap;
 }
 
-header a {
-    color: #8b949e;
+header.site-header .brand {
+    font-family: var(--font-display);
+    font-size: clamp(9px, 2.4vw, 11px);
+    line-height: 1.5;
+    color: var(--accent);
     text-decoration: none;
-    font-size: 14px
+    letter-spacing: 0.02em;
+    max-width: 55%;
+}
+
+header.site-header nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(12px, 3vw, 22px);
+    flex-wrap: wrap;
+}
+
+header.site-header nav a {
+    color: var(--ink-muted);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+header.site-header nav a:hover,
+header.site-header nav a:focus-visible {
+    color: var(--accent);
+}
+
+header.site-header nav a[aria-current="page"] {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 5px;
+}
+
+/* —— Hero —— */
+.hero {
+    text-align: center;
+    padding: 12px 0 28px;
 }
 
 h1 {
-    font-size: 28px;
-    line-height: 1.25;
-    margin: 8px 0 6px;
-    text-align: center
+    font-family: var(--font-display);
+    font-size: clamp(18px, 4.2vw, 28px);
+    line-height: 1.35;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+    margin-bottom: 14px;
 }
 
 .sub {
-    text-align: center;
-    color: #8b949e;
-    font-size: 15px;
-    margin-bottom: 16px
+    color: var(--ink-muted);
+    font-size: clamp(15px, 2.5vw, 17px);
+    max-width: 42ch;
+    margin: 0 auto 28px;
+    line-height: 1.5;
+}
+
+/* —— Arcade cabinet (pure CSS) —— */
+.arcade-cabinet {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.arcade-cabinet__shell {
+    background: var(--surface);
+    padding: clamp(14px, 3vw, 22px) clamp(14px, 3vw, 20px) clamp(18px, 4vw, 26px);
+    border-radius: var(--radius-lg) var(--radius-lg) 12px 12px;
+    position: relative;
+}
+
+.arcade-cabinet__shell::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 6px;
+    background: var(--surface-raised);
+    border-radius: 3px;
+}
+
+.arcade-cabinet__top-slot {
+    height: 10px;
+    margin-bottom: 8px;
+}
+
+.arcade-cabinet__bezel {
+    background: #0a0e12;
+    padding: clamp(8px, 2vw, 12px);
+    border-radius: var(--radius-md);
+}
+
+.arcade-cabinet__base {
+    height: 14px;
+    margin: 0 auto;
+    max-width: 88%;
+    background: var(--surface-raised);
+    border-radius: 0 0 8px 8px;
 }
 
 #stage {
     position: relative;
     width: 100%;
-    max-width: 672px;
-    margin: 0 auto;
-    aspect-ratio: 7/5
+    aspect-ratio: 7/5;
 }
 
 canvas {
     width: 100%;
     height: 100%;
     display: block;
-    background: #161b22;
-    border-radius: 10px;
-    touch-action: none
+    background: var(--surface-raised);
+    border-radius: 6px;
+    touch-action: none;
 }
 
 #overlay {
@@ -70,19 +200,22 @@ canvas {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 10px;
-    background: rgba(13, 17, 23, .86);
-    border-radius: 10px;
+    gap: 12px;
+    background: rgba(5, 6, 8, 0.88);
+    border-radius: 6px;
     text-align: center;
-    padding: 20px
+    padding: 20px;
 }
 
 #overlay.show {
-    display: flex
+    display: flex;
 }
 
 #overlay h2 {
-    font-size: 22px
+    font-family: var(--font-display);
+    font-size: clamp(12px, 3vw, 14px);
+    color: var(--accent);
+    line-height: 1.4;
 }
 
 button {
@@ -90,17 +223,32 @@ button {
     cursor: pointer;
     border: 0;
     border-radius: 8px;
-    padding: 10px 20px
+    padding: 10px 18px;
 }
 
 .primary {
-    background: #238636;
-    color: #fff
+    background: var(--accent);
+    color: var(--ground);
+    font-weight: 600;
+}
+
+.primary:hover,
+.primary:focus-visible {
+    background: var(--accent-dim);
 }
 
 .ghost {
-    background: #21262d;
-    color: #e6edf3
+    background: var(--surface-raised);
+    color: var(--ink);
+}
+
+.ghost:hover,
+.ghost:focus-visible {
+    background: #1f2833;
+}
+
+.arcade-cabinet__panel {
+    margin-top: 14px;
 }
 
 .row {
@@ -108,159 +256,388 @@ button {
     justify-content: space-between;
     align-items: center;
     gap: 12px;
-    margin: 12px 0;
-    font-variant-numeric: tabular-nums
+    flex-wrap: wrap;
+    font-variant-numeric: tabular-nums;
 }
 
 .score {
-    font-size: 20px;
-    font-weight: 600
+    font-size: clamp(16px, 3.5vw, 20px);
+    font-weight: 600;
 }
 
 .score span {
-    color: #8b949e;
+    color: var(--ink-muted);
     font-weight: 400;
-    font-size: 14px
+    font-size: 14px;
 }
 
 .controls {
     display: flex;
     gap: 8px;
-    align-items: center
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .speed {
-    background: #21262d;
-    color: #8b949e;
-    padding: 7px 14px;
+    background: var(--surface-raised);
+    color: var(--ink-muted);
+    padding: 8px 14px;
     font-size: 14px;
-    border-radius: 8px
+    border-radius: 8px;
 }
 
 .speed[aria-pressed="true"] {
-    background: #30363d;
-    color: #e6edf3
+    background: var(--accent-dim);
+    color: var(--ground);
+}
+
+.speed:hover,
+.speed:focus-visible {
+    color: var(--ink);
+}
+
+#pauseBtn {
+    background: var(--pause);
+    color: var(--ground);
+    font-weight: 600;
 }
 
 .hint {
-    color: #8b949e;
+    color: var(--ink-muted);
     font-size: 13px;
     text-align: center;
-    margin-bottom: 22px
+    margin: 14px 0 0;
 }
 
-section {
-    margin: 26px 0
+/* —— Sections —— */
+.page-section {
+    margin-top: var(--section-gap);
 }
 
-h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #21262d;
-    padding-bottom: 8px
+.page-section h2 {
+    font-family: var(--font-display);
+    font-size: clamp(11px, 2.8vw, 14px);
+    line-height: 1.45;
+    color: var(--accent);
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
 }
 
-ol,
-ul {
-    padding-left: 22px
-}
-
-li {
-    margin: 6px 0
-}
-
-details {
-    background: #161b22;
-    border-radius: 8px;
-    padding: 12px 14px;
-    margin: 8px 0
-}
-
-summary {
-    cursor: pointer;
-    font-weight: 600
-}
-
-details p {
-    margin-top: 8px;
-    color: #c9d1d9;
-    font-size: 15px
-}
-
-.grid {
+.play-steps {
+    list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 8px
+    gap: 12px;
 }
 
-.grid a {
+@media (min-width: 720px) {
+    .play-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+}
+
+.play-steps li {
+    background: var(--surface);
+    padding: 18px 20px;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink-muted);
+}
+
+.play-steps li strong {
     display: block;
-    background: #161b22;
-    color: #58a6ff;
-    text-decoration: none;
-    padding: 11px 14px;
-    border-radius: 8px;
-    font-size: 15px
+    color: var(--ink);
+    font-size: 16px;
+    margin-bottom: 6px;
 }
 
-footer {
-    color: #8b949e;
-    font-size: 13px;
+.prose-block p,
+.page-section > p {
+    color: var(--ink-muted);
+    margin: 12px 0;
+    max-width: 65ch;
+}
+
+.prose-block ul,
+.page-section > ul {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+    display: grid;
+    gap: 10px;
+}
+
+.prose-block ul li,
+.page-section > ul:not(.play-steps):not(.online-points) li {
+    background: var(--surface);
+    padding: 14px 18px;
+    border-radius: var(--radius-md);
+    color: var(--ink-muted);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.online-points {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: grid;
+    gap: 12px;
+}
+
+@media (min-width: 768px) {
+    .online-points {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .online-points li:nth-child(5),
+    .online-points li:nth-child(6) {
+        grid-column: span 1;
+    }
+}
+
+.online-points li {
+    background: var(--surface);
+    padding: 18px 20px;
+    border-radius: var(--radius-md);
+    color: var(--ink-muted);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.online-points li strong {
+    color: var(--ink);
+}
+
+.callout {
+    background: var(--surface);
+    padding: 18px 20px 18px 24px;
+    border-radius: var(--radius-md);
+    margin-top: 20px;
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.5;
+    position: relative;
+}
+
+.callout::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 4px;
+    background: var(--accent);
+    border-radius: 0 4px 4px 0;
+}
+
+.faq-list details {
+    background: var(--surface);
+    border-radius: var(--radius-md);
+    padding: 16px 18px;
+    margin: 10px 0;
+}
+
+.faq-list summary {
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-list summary::after {
+    content: "›";
+    color: var(--accent);
+    font-size: 20px;
+    transform: rotate(90deg);
+    transition: transform 0.15s ease;
+    flex-shrink: 0;
+}
+
+.faq-list details[open] summary::after {
+    transform: rotate(-90deg);
+}
+
+.faq-list details p {
+    margin-top: 12px;
+    color: var(--ink-muted);
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.faq-list a {
+    color: var(--link);
+}
+
+.more-games {
+    display: grid;
+    gap: 14px;
+}
+
+@media (min-width: 600px) {
+    .more-games {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.more-games a {
+    display: block;
+    background: var(--surface);
+    color: var(--link);
+    text-decoration: none;
+    padding: 22px 22px 20px;
+    border-radius: var(--radius-md);
+    font-size: 17px;
+    font-weight: 600;
+    min-height: 100%;
+}
+
+.more-games a:hover,
+.more-games a:focus-visible {
+    background: var(--surface-raised);
+}
+
+.inner-links {
+    margin-top: var(--section-gap);
+    font-size: 15px;
     text-align: center;
-    padding: 26px 0 40px;
+}
+
+.inner-links a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+.inner-links a:hover {
+    text-decoration: underline;
+}
+
+/* —— 404 —— */
+.page-404 main {
+    text-align: center;
+    padding: clamp(32px, 8vw, 72px) 0 8px;
+}
+
+.page-404 .error-code {
+    font-family: var(--font-display);
+    font-size: clamp(12px, 3vw, 14px);
+    color: var(--danger);
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+}
+
+.page-404 h1 {
+    max-width: 20ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-404 .error-actions {
+    margin-top: 8px;
+}
+
+.page-404 .error-actions .primary {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.page-404 .error-links {
+    text-align: left;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-404 .error-links h2 {
+    text-align: center;
+}
+
+/* —— Footer —— */
+footer.site-footer {
+    margin-top: var(--section-gap);
+    padding: 28px 0 16px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 8px 14px
+    gap: 12px 20px;
+    color: var(--ink-muted);
+    font-size: 13px;
 }
 
-footer a {
-    color: #8b949e;
-    text-decoration: none
+footer.site-footer .footer-links {
+    display: flex;
+    gap: 18px;
 }
 
-footer a:hover {
-    color: #3fb950
+footer.site-footer a {
+    color: var(--ink-muted);
+    text-decoration: none;
 }
 
-footer p {
-    width: 100%;
-    margin: 10px 0 0
+footer.site-footer a:hover,
+footer.site-footer a:focus-visible {
+    color: var(--accent);
 }
 
-@media(max-width:480px) {
-    h1 {
-        font-size: 22px
+footer.site-footer p {
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    footer.site-footer {
+        flex-direction: column;
+        align-items: flex-start;
     }
-
-    .score {
-        font-size: 17px
-    }
 }
 
-/* Nokia skin — /nokia-snake-game only */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* —— Nokia skin —— */
 body.skin-nokia {
-    background: #0d1117;
+    background: var(--ground);
 }
 
 body.skin-nokia .phone {
-    max-width: 380px;
-    margin: 0 auto 20px;
-    background: #1b1f1a;
-    border-radius: 30px;
-    padding: 20px 16px 34px;
-    box-shadow:
-        0 0 0 3px #2c3128,
-        0 18px 44px rgba(0, 0, 0, 0.65);
+    max-width: 400px;
+    margin: 0 auto 24px;
+    background: #1a1f1c;
+    border-radius: 36px;
+    padding: 22px 20px 28px;
+    position: relative;
+}
+
+body.skin-nokia .phone::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px;
+    height: 5px;
+    background: #2a302c;
+    border-radius: 3px;
 }
 
 body.skin-nokia .screen {
     position: relative;
     background: #c7f0d8;
-    border: 8px solid #0f120e;
-    border-radius: 10px;
-    padding: 10px 10px 6px;
+    border: 10px solid #0f120e;
+    border-radius: 12px;
+    padding: 10px 10px 8px;
     overflow: hidden;
 }
 
@@ -269,11 +646,7 @@ body.skin-nokia .screen::after {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: repeating-linear-gradient(
-        0deg,
-        rgba(67, 82, 61, 0.1) 0 1px,
-        transparent 1px 3px
-    );
+    background: rgba(67, 82, 61, 0.06);
 }
 
 body.skin-nokia .screen #stage {
@@ -309,26 +682,97 @@ body.skin-nokia .screen button.primary {
     color: #c7f0d8;
 }
 
-body.skin-nokia .screen button.ghost {
+body.skin-nokia .screen button.ghost,
+body.skin-nokia .screen #pauseBtn {
     background: rgba(67, 82, 61, 0.2);
     color: #2f3b28;
 }
 
-body.skin-nokia h1 {
-    font-family: ui-monospace, "Courier New", monospace;
-    letter-spacing: 0.06em;
+body.skin-nokia .phone-controls {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+    padding: 0 8px;
+    pointer-events: none;
 }
 
-.inner-links {
-    margin-top: 16px;
-    font-size: 15px;
+body.skin-nokia .dpad {
+    width: 72px;
+    height: 72px;
+    position: relative;
+    margin: 0 auto;
+    grid-column: 2;
 }
 
-.inner-links a {
-    color: #58a6ff;
-    text-decoration: none;
+body.skin-nokia .dpad span {
+    position: absolute;
+    background: #2a302c;
+    border-radius: 4px;
 }
 
-.inner-links a:hover {
-    text-decoration: underline;
+body.skin-nokia .dpad .up {
+    width: 24px;
+    height: 22px;
+    top: 0;
+    left: 24px;
+}
+
+body.skin-nokia .dpad .down {
+    width: 24px;
+    height: 22px;
+    bottom: 0;
+    left: 24px;
+}
+
+body.skin-nokia .dpad .left {
+    width: 22px;
+    height: 24px;
+    left: 0;
+    top: 24px;
+}
+
+body.skin-nokia .dpad .right {
+    width: 22px;
+    height: 24px;
+    right: 0;
+    top: 24px;
+}
+
+body.skin-nokia .dpad .center {
+    width: 20px;
+    height: 20px;
+    left: 26px;
+    top: 26px;
+    background: #1a1f1c;
+}
+
+body.skin-nokia .phone-keys {
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    grid-column: 1 / -1;
+    margin-top: 8px;
+}
+
+body.skin-nokia .phone-keys span {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #2a302c;
+}
+
+body.skin-nokia .play-steps li {
+    background: var(--surface);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .faq-list summary::after {
+        transition: none;
+    }
 }

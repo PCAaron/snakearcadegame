@@ -9,127 +9,17 @@
         content="How Snake Arcade Game handles data: no accounts, no personal information collected, scores stored only on your device, and how third-party advertising cookies work.">
     <link rel="canonical" href="https://snakearcadegame.com/privacy">
     <meta name="robots" content="noindex,follow">
-    <meta name="theme-color" content="#0d1117">
+    <meta name="theme-color" content="#050608">
     <link rel="icon" href="/icon-192.png" sizes="192x192">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0
-        }
-
-        body {
-            background: #0d1117;
-            color: #e6edf3;
-            font: 16px/1.7 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-            padding: 0 16px
-        }
-
-        .wrap {
-            width: 100%;
-            max-width: 720px;
-            margin: 0 auto
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 0;
-            gap: 12px;
-            flex-wrap: wrap
-        }
-
-        .brand {
-            font-weight: 700;
-            color: #e6edf3;
-            text-decoration: none
-        }
-
-        header nav a {
-            color: #8b949e;
-            text-decoration: none;
-            font-size: 14px;
-            margin-left: 14px
-        }
-
-        header nav a:hover {
-            color: #3fb950
-        }
-
-        h1 {
-            font-size: 28px;
-            margin: 20px 0 6px
-        }
-
-        h2 {
-            font-size: 19px;
-            margin: 30px 0 8px;
-            padding-bottom: 7px;
-            border-bottom: 1px solid #21262d
-        }
-
-        p {
-            margin: 10px 0
-        }
-
-        ul {
-            padding-left: 22px;
-            margin: 10px 0
-        }
-
-        li {
-            margin: 6px 0
-        }
-
-        a {
-            color: #3fb950
-        }
-
-        .meta {
-            color: #8b949e;
-            font-size: 14px;
-            margin-bottom: 8px
-        }
-
-        footer {
-            margin: 48px 0 40px;
-            padding-top: 18px;
-            border-top: 1px solid #21262d;
-            color: #8b949e;
-            font-size: 14px
-        }
-
-        footer a {
-            color: #8b949e;
-            margin-right: 14px
-        }
-
-        footer a:hover {
-            color: #3fb950
-        }
-
-        footer {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px 14px
-        }
-
-        footer p {
-            width: 100%;
-            margin: 10px 0 0;
-            text-align: center
-        }
-    </style>
+    <link rel="stylesheet" href="/legal.css">
 </head>
 
 <body>
     <div class="wrap">
 
-        <header>
+        <header class="site-header">
             <a class="brand" href="/">Snake Arcade Game</a>
-            <nav>
-                <a href="/">Play</a>
+            <nav aria-label="Site">
                 <a href="/nokia-snake-game">Nokia Snake</a>
                 <a href="/snake-game-unblocked">Unblocked</a>
             </nav>
@@ -235,14 +125,11 @@
                 our <a href="/contact">Contact page</a>.</p>
         </main>
 
-        <footer>
-            <a href="/">Play Snake</a>
-            <a href="/nokia-snake-game">Nokia Snake</a>
-            <a href="/snake-game-unblocked">Snake Unblocked</a>
-            <a href="/about">About</a>
-            <a href="/privacy">Privacy</a>
-            <a href="/terms">Terms</a>
-            <a href="/contact">Contact</a>
+        <footer class="site-footer">
+            <div class="footer-links">
+                <a href="/privacy">Privacy</a>
+                <a href="/contact">Contact</a>
+            </div>
             <p>© <span id="yr"></span> Snake Arcade Game</p>
         </footer>
 

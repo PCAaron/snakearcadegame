@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Page Not Found – Snake Arcade Game</title>
+    <meta name="description"
+        content="This page does not exist on Snake Arcade Game. Head back to play classic snake free in your browser.">
+    <meta name="robots" content="noindex,follow">
+    <meta name="theme-color" content="#050608">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="icon" sizes="192x192" href="/icon-192.png">
+    <link rel="stylesheet" href="/common.css">
+</head>
+
+<body class="page-home page-game page-404">
+    <div class="wrap">
+
+        <header class="site-header">
+            <a class="brand" href="/">Snake Arcade Game</a>
+            <nav aria-label="Site">
+                <a href="/nokia-snake-game">Nokia Snake</a>
+                <a href="/snake-game-unblocked">Unblocked</a>
+            </nav>
+        </header>
+
+        <main id="main">
+            <p class="error-code" aria-hidden="true">404</p>
+            <h1>Page not found</h1>
+            <p class="sub">That address is not on the board — the snake hit the wall. Pick a page below or head back to
+                the arcade.</p>
+            <p class="error-actions">
+                <a class="primary" href="/">Play Snake Arcade</a>
+            </p>
+
+            <section class="page-section error-links" aria-labelledby="error-links-title">
+                <h2 id="error-links-title">Popular pages</h2>
+                <div class="more-games">
+                    <a href="/nokia-snake-game">Nokia snake game</a>
+                    <a href="/snake-game-unblocked">Snake game unblocked</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-links">
+                <a href="/privacy">Privacy</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <p>© <span id="yr"></span> Snake Arcade Game</p>
+        </footer>
+    </div>
+
+    <script>
+        var y = document.getElementById("yr");
+        if (y) y.textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

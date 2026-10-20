@@ -9,7 +9,7 @@
         content="Snake game unblocked and free — no download, no install, no account. Play in any browser, including on school or work networks that block game sites. Works offline once loaded.">
     <link rel="canonical" href="https://snakearcadegame.com/snake-game-unblocked">
     <link rel="manifest" href="/manifest.webmanifest">
-    <meta name="theme-color" content="#0d1117">
+    <meta name="theme-color" content="#050608">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Snake Arcade">
@@ -34,37 +34,51 @@
     </script>
 </head>
 
-<body>
+<body class="page-unblocked page-game">
     <div class="wrap">
-        <header>
-            <a href="/">Snake Arcade Game</a>
-            <a href="/nokia-snake-game">Nokia Snake</a>
+        <header class="site-header">
+            <a class="brand" href="/">Snake Arcade Game</a>
+            <nav aria-label="Site">
+                <a href="/nokia-snake-game">Nokia Snake</a>
+                <a href="/snake-game-unblocked" aria-current="page">Unblocked</a>
+            </nav>
         </header>
 
-        <h1>Snake Game Unblocked</h1>
-        <p class="sub">Snake unblocked and free to play in your browser — no install, no login.</p>
-
-        <div id="stage">
-            <canvas id="game" width="630" height="450" aria-label="Snake game unblocked"></canvas>
-            <div id="overlay">
-                <h2 id="ovTitle">Game Over</h2>
-                <p id="ovText" class="hint" style="margin:0"></p>
-                <button class="primary" id="ovBtn" type="button">Play again</button>
-            </div>
+        <div class="hero">
+            <h1>Snake Game Unblocked</h1>
+            <p class="sub">Snake unblocked and free to play in your browser — no install, no login.</p>
         </div>
 
-        <div class="row">
-            <div class="score">Score <span id="score">0</span> · Best <span id="best">0</span></div>
-            <div class="controls">
-                <button class="speed" type="button" data-sp="150" aria-pressed="false">Slug</button>
-                <button class="speed" type="button" data-sp="100" aria-pressed="true">Worm</button>
-                <button class="speed" type="button" data-sp="50" aria-pressed="false">Python</button>
-                <button class="ghost" type="button" id="pauseBtn">Pause</button>
+        <div class="arcade-cabinet" data-ui>
+            <div class="arcade-cabinet__shell">
+                <div class="arcade-cabinet__top-slot" aria-hidden="true"></div>
+                <div class="arcade-cabinet__bezel">
+                    <div id="stage">
+                        <canvas id="game" width="630" height="450" aria-label="Snake game unblocked"></canvas>
+                        <div id="overlay">
+                            <h2 id="ovTitle">Game Over</h2>
+                            <p id="ovText" class="hint" style="margin:0"></p>
+                            <button class="primary" id="ovBtn" type="button">Play again</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="arcade-cabinet__panel">
+                    <div class="row">
+                        <div class="score">Score <span id="score">0</span> · Best <span id="best">0</span></div>
+                        <div class="controls">
+                            <button class="speed" type="button" data-sp="150" aria-pressed="false">Slug</button>
+                            <button class="speed" type="button" data-sp="100" aria-pressed="true">Worm</button>
+                            <button class="speed" type="button" data-sp="50" aria-pressed="false">Python</button>
+                            <button class="ghost" type="button" id="pauseBtn">Pause</button>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="arcade-cabinet__base" aria-hidden="true"></div>
         </div>
         <p class="hint">Arrow keys or W A S D · swipe on mobile</p>
 
-        <section>
+        <section class="page-section prose-block">
             <h2>Why Do Schools and Workplaces Block Game Sites?</h2>
             <p>Usually not because of the game itself. Network filters sort the web into categories — gaming, social
                 media, streaming, adult content — and then block whole categories at once. A page gets sorted into
@@ -82,11 +96,11 @@
                 nothing on this page tries to.</p>
         </section>
 
-        <section>
+        <section class="page-section">
             <h2>How to Play Without Installing Anything</h2>
             <p>This page is a single HTML file with the game built in. Press a key and the round starts; there is no
                 installer, no file to download, and no account to create.</p>
-            <ol>
+            <ol class="play-steps">
                 <li><strong>Press an arrow key, or swipe once.</strong> The round begins immediately — there is no start
                     screen, no loading bar, and no ad before the game.</li>
                 <li><strong>Steer with arrow keys or W A S D</strong> on a keyboard, or swipe in the direction you want
@@ -101,26 +115,26 @@
                 step that a filter can interrupt.</p>
         </section>
 
-        <section>
+        <section class="page-section prose-block">
             <h2>Does an Unblocked Version Differ From the Normal One?</h2>
             <p>No. It is the same game, same rules, same three speeds, same local high score — the difference is only in
                 how you got here. "Unblocked" describes the network you are on, not the game. Nothing is modified, and
                 nothing is bypassed to make it load.</p>
         </section>
 
-        <p class="inner-links">
-            <a href="/">classic snake game</a> ·
-            <a href="/nokia-snake-game">nokia snake game</a>
-        </p>
+        <section class="page-section">
+            <h2>More Snake Games</h2>
+            <div class="more-games">
+                <a href="/nokia-snake-game">nokia snake game</a>
+                <a href="/snake-game-unblocked">snake game unblocked</a>
+            </div>
+        </section>
 
-        <footer>
-            <a href="/">Play Snake</a>
-            <a href="/nokia-snake-game">Nokia Snake</a>
-            <a href="/snake-game-unblocked">Snake Unblocked</a>
-            <a href="/about">About</a>
-            <a href="/privacy">Privacy</a>
-            <a href="/terms">Terms</a>
-            <a href="/contact">Contact</a>
+        <footer class="site-footer">
+            <div class="footer-links">
+                <a href="/privacy">Privacy</a>
+                <a href="/contact">Contact</a>
+            </div>
             <p>© <span id="yr"></span> Snake Arcade Game</p>
         </footer>
     </div>
