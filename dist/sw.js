@@ -1,4 +1,4 @@
-const CACHE = "snake-arcade-v5";
+const CACHE = "snake-arcade-v6";
 const ASSETS = [
   "/",
   "/nokia-snake-game",
