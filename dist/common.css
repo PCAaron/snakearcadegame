@@ -211,11 +211,13 @@ canvas {
     display: flex;
 }
 
-#overlay h2 {
+#overlay #ovTitle {
     font-family: var(--font-display);
     font-size: clamp(12px, 3vw, 14px);
     color: var(--accent);
     line-height: 1.4;
+    font-weight: 700;
+    margin: 0;
 }
 
 button {
@@ -356,7 +358,7 @@ button {
 .page-section > p {
     color: var(--ink-muted);
     margin: 12px 0;
-    max-width: 65ch;
+    max-width: 100%;
 }
 
 .prose-block ul,
